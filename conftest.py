@@ -5,6 +5,7 @@ from selenium.webdriver.chrome.options import Options
 import time
 
 
+
 def pytest_addoption(parser):
     parser.addoption('--browser', action='store', default='Chrome',
                      help="Choose language: Chrome or Firefox")
@@ -14,6 +15,7 @@ def pytest_addoption(parser):
 def browser(request):
     selected_browser = request.config.getoption("--browser")
     options = Options()
+    options.headless = True
     print("\nstart browser for test..")
     if selected_browser == 'Firefox':
         browser = webdriver.Firefox(options=options)
@@ -28,7 +30,7 @@ def search_url_links():
     browser = webdriver.Chrome()
     browser.get('https://www.cbr.ru/')
     time.sleep(2)
-    url_links = []
+    url_links = ['https://www.cbr.ru/', ]
     button = browser.find_element(By.XPATH, '/html/body/header/div[5]/div/div/div[1]/div/div[1]/div/div')
     button.click()
     time.sleep(2)
