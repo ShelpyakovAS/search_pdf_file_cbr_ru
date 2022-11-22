@@ -13,9 +13,3 @@ def test_search_pdf_on_page(browser, link):
         if '.pdf' in href:
             links_pdf.append(href)
             print(href)
-
-# #menu_content_Activity a
-# #menu_content_FinancialMarkets a
-# #menu_content_Documents a
-# #menu_content_AboutBank a
-# #menu_content_Services a
