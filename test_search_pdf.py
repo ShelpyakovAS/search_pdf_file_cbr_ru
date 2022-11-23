@@ -21,7 +21,6 @@ def test_search_pdf_by_selenium(browser, link):
 @pytest.mark.parametrize('link', search_url_links())
 def test_search_pdf_by_requests(link):
     data = requests.get(link).text
-
     parser = etree.HTMLParser()
     tree = etree.parse(io.StringIO(data), parser)
     for im in tree.xpath('//a'):
