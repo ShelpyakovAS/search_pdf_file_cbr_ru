@@ -1,5 +1,4 @@
 chromedriver.exe
-geckodriver.exe
 geckodriver.log
-/venv
-.pytest_cache
+geckodriver.exe
+.idea
